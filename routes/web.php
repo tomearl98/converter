@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index');
+
+Route::get('/convert/temperature', 'App\Http\Controllers\ConversionController@temperature');
+Route::post('/convert/temperature/go','App\Http\Controllers\ConversionController@tempConvert');
